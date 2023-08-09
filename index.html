@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Meta Data -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- JS Links -->
+  <script src="js/main.js" defer></script>
+
+  <!-- CSS Links -->
+  <link rel="stylesheet" href="Styles/main.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <!-- Title -->
+  <title>Frontend Mentor | Multi-step form</title>
+
+</head>
+
+<body>
+
+  <main class="main">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+      <div class="sidebar__steps-wrapper">
+
+        <div class="sidebar__step js-current" data-order="1">
+
+          <div data-view="mobile">
+            <button class="sidebar__step__btn c-step-order" type="button">1</button>
+          </div>
+          <div data-view="desktop">
+            <div class="sidebar__step__order c-step-order">1</div>
+            <button class="sidebar__step__btn u-uppercase" type="button">
+              <span>step 1</span>
+              <span>your info</span>
+            </button>
+          </div>
+
+        </div>
+        <div class="sidebar__step" data-order="2">
+
+          <div data-view="mobile">
+            <button class="sidebar__step__btn c-step-order" type="button">2</button>
+          </div>
+          <div data-view="desktop">
+            <div class="sidebar__step__order c-step-order">2</div>
+            <button class="sidebar__step__btn u-uppercase" type="button">
+              <span>step 2</span>
+              <span>select plan</span>
+            </button>
+          </div>
+
+        </div>
+        <div class="sidebar__step" data-order="3">
+
+          <div data-view="mobile">
+            <button class="sidebar__step__btn c-step-order" type="button">3</button>
+          </div>
+          <div data-view="desktop">
+            <div class="sidebar__step__order c-step-order">3</div>
+            <button class="sidebar__step__btn u-uppercase" type="button">
+              <span>step 3</span>
+              <span>add-ons</span>
+            </button>
+          </div>
+
+        </div>
+        <div class="sidebar__step" data-order="4">
+
+          <div data-view="mobile">
+            <button class="sidebar__step__btn c-step-order" type="button">4</button>
+          </div>
+          <div data-view="desktop">
+            <div class="sidebar__step__order c-step-order">4</div>
+            <button class="sidebar__step__btn u-uppercase" type="button">
+              <span>step 4</span>
+              <span>summary</span>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </aside>
+
+    <div class="form-wrapper">
+
+      <div class="form-sections">
+
+        <!-- Step One -->
+        <section class="form-section js-current" data-order="1" data-desktop-grow>
+
+          <header class="form-section__header">
+            <h1 class="form-section__title c-title">personal info</h1>
+            <p class="form-section__description">
+              please provide your name, email address, and phone number.
+            </p>
+          </header>
+          <div class="form-section__content">
+            <form action="/" method="get" class="l-grid-spacer" style="--gap: .5rem" data-desktop-grow>
+              <div>
+                <div class="l-flex-between">
+                  <label class="u-marker-dark u-capitalize" for="#name">
+                    name
+                  </label>
+                  <p class="validation-message u-fw-medium">This field is required</p>
+                </div>
+                <input type="text" name="name" id="name" placeholder="e.g. Stephen King" data-type="name">
+              </div>
+              <div>
+                <div class="l-flex-between">
+                  <label class="u-marker-dark u-capitalize" for="#email">
+                    email address
+                  </label>
+                  <p class="validation-message u-fw-medium">This field is required</p>
+                </div>
+                <input type="text" name="email" id="email" placeholder="e.g. stephenking@lorem.com"
+                  data-type="email address">
+              </div>
+              <div>
+                <div class="l-flex-between">
+                  <label class="u-marker-dark u-capitalize" for="#phone">
+                    phone number
+                  </label>
+                  <p class="validation-message u-fw-medium">This field is required</p>
+                </div>
+                <input type="text" name="phone" id="phone" placeholder="e.g. +1 234 567 890" data-type="phone number">
+              </div>
+            </form>
+          </div>
+
+        </section>
+
+        <!-- Step Two -->
+        <section class="form-section" data-order="2">
+
+          <header class="form-section__header">
+            <h1 class="form-section__title c-title">Select your plan</h1>
+            <p class="form-section__description ">
+              you have the option of monthly or yearly billing.
+            </p>
+          </header>
+          <div class="form-section__conetent l-grid-spacer" style="--gap: 1.75rem" data-desktop-grow>
+
+            <div class="form-section__cards l-grid-spacer" style="--gap: 1rem"></div>
+
+            <div class="form-section__controls">
+              <span class="js-active u-fw-bold u-capitalize" data-plan="monthly">Monthly</span>
+              <button class="form-section__controls__btn" type="button">
+                <span class="u-sr-only">
+                  Change the billing method to yearly
+                </span>
+              </button>
+              <span class="u-fw-bold u-capitalize" data-plan="yearly">Yearly</span>
+            </div>
+
+          </div>
+
+        </section>
+
+        <!-- Step Three -->
+        <section class="form-section" data-order="3">
+          <header class="form-section__header">
+            <h1 class="form-section__title c-title">Pick add-ons</h1>
+            <p class="form-section__description ">
+              add-ons help enhance your gaming experience.
+            </p>
+          </header>
+          <div class="form-section__content l-grid-spacer" style="--gap: 1.25rem"></div>
+        </section>
+
+        <!-- Step Four -->
+        <section class="form-section" data-order="4">
+          <header class="form-section__header">
+            <h1 class="form-section__title c-title">Finishing up</h1>
+            <p class="form-section__description ">
+              double-check everything looks OK before confirming.
+            </p>
+          </header>
+          <div class="form-section__content overview">
+            <div class="overview__content">
+              <div class="overview__plan">
+                <div class="overview__row l-flex-between">
+                  <div>
+                    <h3 class="c-title u-capitalize overview__plan__title"></h3>
+                    <button class="overview__plan__btn " type="button">chnage</button>
+                  </div>
+                  <span class="c-title overview__plan__price"></span>
+                </div>
+              </div>
+              <div class="overview__add-ons l-grid-spacer js-no-add-ons" style="--gap: .5rem"></div>
+            </div>
+            <div class="overview__footer overview__row l-flex-between">
+              <span class="">
+                total per <span class="overview__footer__plan-duration"></span>
+              </span>
+              <span class="u-marker-light overview__footer__total-price"></span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Confirmation Message -->
+        <section class="form-section" data-order="5">
+          <div class="form-section__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+              <g fill="none">
+                <circle cx="40" cy="40" r="40" fill="#F9818E" />
+                <path fill="#E96170"
+                  d="M48.464 79.167c.768-.15 1.53-.321 2.288-.515a40.04 40.04 0 0 0 3.794-1.266 40.043 40.043 0 0 0 3.657-1.63 40.046 40.046 0 0 0 12.463-9.898A40.063 40.063 0 0 0 78.3 51.89c.338-1.117.627-2.249.867-3.391L55.374 24.698a21.6 21.6 0 0 0-15.332-6.365 21.629 21.629 0 0 0-15.344 6.365c-8.486 8.489-8.486 22.205 0 30.694l23.766 23.775Z" />
+                <path fill="#FFF"
+                  d="M40.003 18.333a21.58 21.58 0 0 1 15.31 6.351c8.471 8.471 8.471 22.158 0 30.63-8.47 8.47-22.156 8.47-30.627 0-8.47-8.472-8.47-22.159 0-30.63a21.594 21.594 0 0 1 15.317-6.35Zm9.865 15c-.316.028-.622.15-.872.344l-12.168 9.13-5.641-5.642c-1.224-1.275-3.63 1.132-2.356 2.356l6.663 6.663c.56.56 1.539.63 2.173.156l13.326-9.995c1.122-.816.43-2.993-.956-3.013a1.666 1.666 0 0 0-.17 0Z" />
+              </g>
+            </svg>
+          </div>
+          <h3 class="form-section__title c-title ">
+            thank you!
+          </h3>
+          <p class="form-section__description">
+            Thanks for confirming your subscription! We hope you have fun
+            using our platform. If you ever need support, please feel free
+            to email us at support@loremgaming.com
+          </p>
+        </section>
+
+      </div>
+
+      <!-- Section Controller -->
+      <div class="section-controls l-flex-between">
+
+        <button class="section-controls__prev-btn u-fw-medium u-capitalize" type="button">go back</button>
+        <button class="section-controls__next-btn u-capitalize" type="button">next step</button>
+
+      </div>
+    </div>
+
+  </main>
+
+</body>
+
+</html>
