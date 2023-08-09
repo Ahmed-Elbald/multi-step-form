@@ -643,6 +643,8 @@ button {
   }
 
   .form-section__description {
+    max-width: 350px;
+    @include prefix(margin-inline, auto);
     font-size: 1.075rem;
     line-height: 1.5;
   }
