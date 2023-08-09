@@ -74,7 +74,7 @@ class createAddOnObject {
 }
 
 
-fetch("../data/data.json")
+fetch("./data/data.json")
   .then(async (formData) => await formData.json())
   .then(formData => {
 
