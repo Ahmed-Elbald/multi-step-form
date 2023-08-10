@@ -390,9 +390,6 @@ button {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-.form-section[data-order="2"] .form-section__cards.js-yearly-plan .form-section__card__gift {
-  display: block;
-}
 .form-section[data-order="2"] .form-section__card {
   padding: 1rem;
   border-radius: 10px;
@@ -414,8 +411,11 @@ button {
 .form-section[data-order="2"] .form-section__card.js-selected {
   background-color: var(--clr-neu-300);
 }
+.form-section[data-order="2"] .form-section__card__content {
+  grid-template-rows: 1fr 1fr 0fr;
+}
 .form-section[data-order="2"] .form-section__card__gift {
-  display: none;
+  overflow: hidden;
 }
 
 .form-section__controls {
@@ -432,12 +432,6 @@ button {
   background-color: var(--clr-neu-300);
 }
 .form-section__controls span[data-plan=monthly] {
-  color: var(--clr-pr-700);
-}
-.form-section__controls.js-yearly-plan span[data-plan=monthly] {
-  color: inherit;
-}
-.form-section__controls.js-yearly-plan span[data-plan=yearly] {
   color: var(--clr-pr-700);
 }
 .form-section__controls__btn {
@@ -460,7 +454,17 @@ button {
   height: calc(var(--select-height) - var(--offest));
   pointer-events: none;
 }
-.form-section__controls.js-yearly-plan .form-section__controls__btn::before {
+
+.form-section[data-order="2"].js-yearly-plan .form-section__card__content {
+  grid-template-rows: 1fr 1fr 1fr;
+}
+.form-section[data-order="2"].js-yearly-plan .form-section__controls span[data-plan=monthly] {
+  color: inherit;
+}
+.form-section[data-order="2"].js-yearly-plan .form-section__controls span[data-plan=yearly] {
+  color: var(--clr-pr-700);
+}
+.form-section[data-order="2"].js-yearly-plan .form-section__controls__btn::before {
   left: calc(100% - (var(--select-height) - var(--offest) / 2));
 }
 

@@ -413,12 +413,12 @@ planDurationBtn.addEventListener("click", () => {
 
   if (currentPlan.currentPlanDuration == "monthly") {
 
-    planContorls.classList.add("js-yearly-plan");
+    formSections[1].classList.add("js-yearly-plan");
     currentPlan.currentPlanDuration = "yearly"
 
   } else {
 
-    planContorls.classList.remove("js-yearly-plan");
+    formSections[1].classList.remove("js-yearly-plan");
     currentPlan.currentPlanDuration = "monthly"
 
   }

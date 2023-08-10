@@ -450,15 +450,9 @@ button {
 .form-section[data-order="2"] {
 
   .form-section__cards {
-
     @include min-mq($min) {
       grid-template-columns: repeat(3, 1fr);
     }
-
-    &.js-yearly-plan .form-section__card__gift {
-      display: block;
-    }
-
   }
 
   .form-section__card {
@@ -485,8 +479,12 @@ button {
       background-color: var(--clr-neu-300);
     }
 
+    &__content {
+      grid-template-rows: 1fr 1fr 0fr;
+    }
+
     &__gift {
-      display: none;
+      overflow: hidden;
     }
 
   }
@@ -505,18 +503,6 @@ button {
 
   span[data-plan="monthly"] {
     color: var(--clr-pr-700);
-  }
-
-  &.js-yearly-plan {
-
-    span[data-plan="monthly"] {
-      color: inherit;
-    }
-
-    span[data-plan="yearly"] {
-      color: var(--clr-pr-700);
-    }
-
   }
 
   &__btn {
@@ -539,8 +525,29 @@ button {
     }
   }
 
-  &.js-yearly-plan &__btn::before {
-    left: calc(100% - (var(--select-height) - (var(--offest) / 2)));
+}
+
+
+.form-section[data-order="2"].js-yearly-plan {
+
+  .form-section__card__content {
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  .form-section__controls {
+
+    span[data-plan="monthly"] {
+      color: inherit;
+    }
+
+    span[data-plan="yearly"] {
+      color: var(--clr-pr-700);
+    }
+
+    &__btn::before {
+      left: calc(100% - (var(--select-height) - (var(--offest) / 2)));
+    }
+
   }
 
 }
